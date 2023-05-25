@@ -1,0 +1,25 @@
+import numpy as np from tensorflow.keras.models 
+import Sequential from tensorflow.keras.layers import 
+Dense, Dropout from tensorflow.keras.optimizers 
+import RMSprop from tensorflow.keras.datasets 
+import mnist import matplotlib.pyplot as plt from 
+sklearn import metrics 
+import pandas as pd
+data=pd.read_csv("adress")
+(x_train, y_train), (x_test, y_test) = mnist.load_data() plt.imshow(x_train[0], 
+cmap='gray')
+plt.show() 
+print(x_train[0]) 
+print("X_train shape", x_train.shape) 
+print("y_train shape", y_train.shape) 
+print("X_test shape", x_test.shape) print("y_test 
+shape", y_test.shape) X_train shape (60000, 
+28, 28) y_train shape (60000,) 
+X_test shape (10000, 28, 28) y_test shape 
+(10000,) 
+validation_data=(x_test, y_test))
+set and validation set yourself, 
+# 60000image/128=469 batch each 
+# Evaluate the model 
+score = model.evaluate(x_test, y_test, verbose=0) 
+print('Test loss:', score[0]) print('Test accuracy:', score[1])

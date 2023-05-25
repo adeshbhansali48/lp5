@@ -1,0 +1,35 @@
+import pandas as pd
+import numpy as np
+import matplatlib.pyplot as plt
+import seaborn as sns
+%matplotlib inline
+from sklearn.dataset import fetch_california_housing
+housing=fetch_california_housing
+data=pd.DataFrame(data.housing)
+data.head()
+data.coloumn=housing.feature_name
+data.head()
+data['PRICE]=housing.target
+data.shape
+data.columns
+data.dtypes
+data.isnull().sum()
+data.describe()
+corr=data.corr()
+corr.shape()
+plt.figure(figuresize=(20,20))
+sns.heatmap(corr, square=True ,annot=True)
+x=data.drop(['PRICE'],axis=1)
+y=data['PRICE']
+from sklearn.model_selection import train_test_split
+x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.3,random_state=4)
+from sklearn.linear_model import linear regression
+lm=linearregression()
+lm.fit(x_train,y_train)
+lm.intercept_
+y_pred=lm.predict(x_train)
+plt.scatter(y_train,y_pred)
+plt.xlabel
+plt.ylabel
+plt.title
+plt.show
